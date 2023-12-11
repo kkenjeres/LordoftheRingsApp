@@ -16,14 +16,14 @@ const index = () => {
         <ul>
           <li className="link">
             <Link href="/volumes/theFellowshipOfTheRing">
-              theFellowshipOfTheRing
+              The Fellowship of the Ring
             </Link>
           </li>
           <li className="link">
-            <Link href="/volumes/theTwoTowers">theTwoTowers</Link>
+            <Link href="/volumes/theTwoTowers">The Two Towers</Link>
           </li>
           <li className="link">
-            <Link href="/volumes/theReturnofTheKing">theReturnofTheKing</Link>
+            <Link href="/volumes/theReturnofTheKing">The Return of the King</Link>
           </li>
         </ul>
       </div>
