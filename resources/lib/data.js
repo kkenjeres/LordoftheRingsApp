@@ -1,4 +1,4 @@
-export const volumes = [
+export const movies = [
   {
     slug: "the-fellowship-of-the-ring",
     title: "The Fellowship of the Ring",

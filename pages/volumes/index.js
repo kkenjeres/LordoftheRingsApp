@@ -2,10 +2,27 @@ import React from "react";
 import { introduction } from "../../resources/lib/data";
 import Link from "next/link";
 import BackButton from "@/components/BackButton";
+import { useRouter } from "next/router";
+import { movies } from "../../resources/lib/data";
+import { GiPerspectiveDiceSixFacesRandom } from "react-icons/gi";
+import Head from "next/head";
 
 const index = () => {
+  const router = useRouter();
+
+  function getRandomElement(array) {
+    return array[Math.floor(Math.random() * array.length)];
+  }
+  const handleRandomMovie = () => {
+    const randomMovie = getRandomElement(movies);
+    router.push(`/volumes/${randomMovie.slug}`);
+  };
+
   return (
-    <section>
+    <>
+     <Head>
+        <title>Index</title>
+      </Head>
       <BackButton />
       <header>
         <h1>Lord of the Rings</h1>
@@ -14,20 +31,15 @@ const index = () => {
       <div className="nav">
         <h2>All Volumes</h2>
         <ul>
-          <li className="link">
-            <Link href="/volumes/theFellowshipOfTheRing">
-              The Fellowship of the Ring
-            </Link>
-          </li>
-          <li className="link">
-            <Link href="/volumes/theTwoTowers">The Two Towers</Link>
-          </li>
-          <li className="link">
-            <Link href="/volumes/theReturnofTheKing">The Return of the King</Link>
-          </li>
+          {movies.map(({ slug, title, id }) => (
+            <li key={id} li className="link">
+              <Link href={`/volumes/${slug}`}>{title}</Link>
+            </li>
+          ))}
         </ul>
+        <button onClick={handleRandomMovie} className="randomBtn"><GiPerspectiveDiceSixFacesRandom className="icon"/>Go to Random Movie</button>
       </div>
-    </section>
+    </>
   );
 };
 
