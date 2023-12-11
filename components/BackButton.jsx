@@ -28,9 +28,9 @@ const StyledButton = styled.button`
 const BackButton = () => {
   const router = useRouter();
   return (
-    <div>
+    <>
       <StyledButton onClick={() => router.back()}>← back</StyledButton>
-    </div>
+    </>
   );
 };
 
