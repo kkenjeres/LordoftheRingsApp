@@ -7,7 +7,7 @@ import { movies } from "../../resources/lib/data";
 import { GiPerspectiveDiceSixFacesRandom } from "react-icons/gi";
 import Head from "next/head";
 
-const index = () => {
+const Index = () => {
   const router = useRouter();
 
   function getRandomElement(array) {
@@ -46,4 +46,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
