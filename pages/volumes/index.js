@@ -20,7 +20,7 @@ const index = () => {
 
   return (
     <>
-     <Head>
+      <Head>
         <title>Index</title>
       </Head>
       <BackButton />
@@ -31,13 +31,16 @@ const index = () => {
       <div className="nav">
         <h2>All Volumes</h2>
         <ul>
-          {movies.map(({ slug, title, id }) => (
-            <li key={id} li className="link">
+          {movies.map(({ slug, title }) => (
+            <li key={slug} className="link">
               <Link href={`/volumes/${slug}`}>{title}</Link>
             </li>
           ))}
         </ul>
-        <button onClick={handleRandomMovie} className="randomBtn"><GiPerspectiveDiceSixFacesRandom className="icon"/>Go to Random Movie</button>
+        <button onClick={handleRandomMovie} className="randomBtn">
+          <GiPerspectiveDiceSixFacesRandom className="icon" />
+          Go to Random Movie
+        </button>
       </div>
     </>
   );
